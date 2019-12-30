@@ -1,0 +1,89 @@
+@mixin fcc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin fcs {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+@mixin fss {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+@mixin fes {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+@mixin fce {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+@mixin fcsb {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin fcsa {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+@mixin if {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin fse {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+@mixin fssb {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+}
+
+@mixin fes {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
+
+@mixin absolute {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+} 
+
+@mixin breakpoints($media) {
+  @if $media == xs {
+    @media only screen and (max-width: 543px) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (max-width: 767px) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (max-width: 991px) { @content; }
+  }
+
+  @else if $media == lg {
+    @media only screen and (max-width: 1199px) { @content; }
+  }
+}

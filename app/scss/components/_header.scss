@@ -1,0 +1,58 @@
+.header-wrapper {
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	max-height: 900px;
+}
+
+.header-menu {
+	width: 100%;
+	padding-top: 60px;
+}
+
+.header-btn {
+	top: 4px;
+}
+
+.header-categoties {
+	display: inline-flex;
+}
+
+.header-list {
+
+	&__element {
+		display: inline-block;
+		padding: 0 20px;
+	}
+
+	&__link {
+		color: $title-color;
+		font-size: 16px;
+		transition: all 0.3s ease;
+
+
+		&:hover {
+			color: $text-color;
+		}
+	}
+}
+.header-subcategoties {
+	display: inline-flex;
+
+	&__btn {
+		width: 130px;
+		height: 40px;
+		border-radius: 30px;
+		background-color: $bth-head;
+		margin-top: -7px;
+		margin-left: 10px;
+		
+	}
+
+	&__text {
+		color: $btn-whire;
+	}
+}
+.header-logo {
+	text-align: center;
+}
