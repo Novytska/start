@@ -42,7 +42,8 @@ img {
 
 .title-h1 {
 	font-size: 62px;
-	line-height: 72px;	
+	line-height: 72px;
+	font-family: $title-font;	
 }
 
 .title-h2 {
@@ -60,5 +61,11 @@ img {
 	color: $title-color;
 	font-weight: 300;
 	font-size: 32px;
+}
+
+.main-text {
+	font-size: 20px;
+	color: $main-text-color;
+	line-height: 28px;
 }
 
