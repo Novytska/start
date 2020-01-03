@@ -2,7 +2,8 @@
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
-	max-height: 900px;
+	min-height: 920px;
+	overflow: hidden;
 }
 
 .header-menu {
@@ -10,8 +11,51 @@
 	padding-top: 60px;
 }
 
+.burger-menu {
+	display: inline-flex;
+}
+
 .header-btn {
-	top: 4px;
+	top: -4px;
+
+	&__icon {
+		display: block;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  	height: 2px;
+	  	width: 100%;
+	  	background-color: black;
+
+	  	&:before, &:after {
+			content: "";
+			position: absolute;
+		  	display: block;
+		  	left: 0;
+		  	width: 100%;
+		  	height: 2px;
+		  	background-color: black;  	
+	  	}
+	  	&:before {
+	  		bottom: -5px;
+	  	}
+
+	  	&:after {
+	  		bottom: -10px;
+	  	}
+	}
+}
+
+.header-navigation {
+	display: flex;
+	position: fixed;
+	z-index: 20;
+	height: 100%;
+	background-color: #26272d;
+	left: -100px;
+}
+.active {
+	left: 0;
 }
 
 .header-categoties {
@@ -76,7 +120,7 @@
 	@include fcc;
 
 	flex-wrap: wrap;
-	transform: translateY(120px);
+	padding-top: 120px;
 	max-width: 770px;
 	margin: 0 auto;
 
@@ -93,5 +137,19 @@
 		font-size: 16px;
 		border: 1px solid $main-text-color;
 		font-weight: normal;
+		position: relative;
+
+			&:before {
+			content: '\e802';
+			font-size: 16px;
+			font-family: 'fontello';
+			color: $btn-whire;
+			padding-right: 15px;
+		}
 	}
+}
+.header-iphone {
+	padding-top: 60px;
+	text-align: center;
+	overflow: hidden;
 }

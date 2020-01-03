@@ -1,6 +1,8 @@
 
 .icon-tumbler:before { content: '\e800'; } /* '' */
 .icon-right:before { content: '\e801'; } /* '' */
+.icon-play:before { content: '\e802'; } /* '' */
+.icon-heart-empty:before { content: '\e803'; } /* '' */
 .icon-lock-open-alt:before { content: '\f075'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */

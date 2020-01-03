@@ -42,10 +42,18 @@
 	  	background-color: black;  	
   	}
   	&:before {
-  				bottom: -5px;
-  			}
+  		bottom: -5px;
+  	}
 
-  			&:after {
-  				bottom: -10px;
-  			}
+  	&:after {
+  		bottom: -10px;
+  	}
 }
+
+.btn-play {
+	border: 10px solid transparent;
+}
+.btn-before {
+		border-right: 0;
+		border-left-color: red;
+	}
