@@ -38,12 +38,16 @@ $(document).ready(function(){
   		]
 	});
 
+// Navigation
+
   $('.header-btn').on('click', function() {
     $('.header-navigation').addClass('active');
+    $('body').addClass('overflow-hidden');  
   })
 
   $('.header-navigation__close').on('click', function() {
     $('.header-navigation').removeClass('active');
+    $('body').removeClass('overflow-hidden');
   })
 
 })

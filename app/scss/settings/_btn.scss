@@ -4,10 +4,11 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+  border-radius: 30px;
 }
 
 .btn-menu {
-	display: inline-block;
+	display: inline-flex;
     background-color: transparent;
     position: relative;
     overflow: hidden;
@@ -50,10 +51,26 @@
   	}
 }
 
-.btn-play {
-	border: 10px solid transparent;
+  .btn__text-white {
+    color: $btn-white;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 0;
+    display: inline-block;
+  }
+
+  .btn-blue__hover {
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+
+.btn-grey__hover {
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 70%;
+    border: 1px solid $black-color;
+  }
 }
-.btn-before {
-		border-right: 0;
-		border-left-color: red;
-	}

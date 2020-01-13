@@ -75,7 +75,13 @@ img {
 	line-height: 28px;
 }
 
-.active {
-	left: 0;
+.header-list {
+	margin: 0;
+}
+.overflow-hidden {
+	overflow: hidden;
 }
 
+.bold {
+	font-weight: 700;
+}

@@ -1,11 +1,11 @@
+@import "libs/bootstrap.min";
+
 @import "settings/reset";
 @import "settings/variable";
 @import "settings/btn";
 @import "settings/fonts";
 @import "settings/mixin";
 @import "settings/extend";
-
-@import "libs/bootstrap.min";
 
 @import "components/header";
 @import "components/body";

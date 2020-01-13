@@ -1,7 +1,7 @@
 .header-wrapper {
 	background-size: cover;
 	background-position: center;
-	min-height: 920px;
+	max-height: 920px;
 	overflow: hidden;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .header-btn {
-	top: 4px;
+	top: 3px;
 
 	&:hover {
 		.header-btn {
@@ -61,12 +61,16 @@
 	position: fixed;
 	height: 100%;
 	background-color: $nav-color;
-	left: -250px;
-	width: 250px;
+	transform: translateX(-100%);
+	left: 0;
 	top: 0;
 	z-index: 1;
 	padding: 40px;
-	transition: left 0.7s cubic-bezier(0.545, 0, 0.05, 1);
+	transition: all 0.7s cubic-bezier(0.545, 0, 0.05, 1);
+
+	&.active {
+		transform: translateX(0);
+	}
 
 
 	&__link {
@@ -200,9 +204,14 @@
 
 .header-list {
 
+	&:first-child {
+			padding: 10px 0;
+		}
+
 	&__element {
 		display: inline-block;
 		padding: 0 20px;
+		margin: 0;
 	}
 
 	&__link {
@@ -221,30 +230,14 @@
 
 	&__btn {
 		min-width: 130px;
-		height: 40px;
 		border-radius: 30px;
 		background-color: $bth-head;
-		margin-top: -7px;
 		margin-left: 10px;
 		position: relative;
-		transition: all 0.3s ease;
 
 		&:before {
-			content: '\f179';
-			font-size: 16px;
-			font-family: 'fontello';
-			color: $btn-white;
-			padding-right: 15px;
+			@include before-apple;
 		}
-
-		&:hover {
-			background-color: rgba(38,125,244, .5);
-		}	
-	}
-
-	&__text {
-		color: $btn-white;
-		display: block;
 	}
 }
 .header-logo {
