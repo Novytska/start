@@ -7,16 +7,18 @@
 @import "settings/mixin";
 @import "settings/extend";
 
+@import "fonts/fontello/animation.css";
+@import "fonts/fontello/fontello.css";
+@import "fonts/fontello/fontello-codes.css";
+@import "fonts/fontello/fontello-embedded.css";
+@import "fonts/fontello/fontello-ie7.css";
+@import "fonts/fontello/fontello-ie7-codes.css";
+
 @import "components/header";
 @import "components/body";
 @import "components/footer";
 @import "components/popup";
 @import "components/common";
 
-@import "../fonts/fontello/animation.css";
-@import "../fonts/fontello/fontello.css";
-@import "../fonts/fontello/fontello-codes.css";
-@import "../fonts/fontello/fontello-embedded.css";
-@import "../fonts/fontello/fontello-ie7.css";
-@import "../fonts/fontello/fontello-ie7-codes.css";
+
 

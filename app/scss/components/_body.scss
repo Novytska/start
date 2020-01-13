@@ -300,4 +300,25 @@
 
 .customers-slider {
 	@include fcc;
+	max-width: 1110px;
+
+	&__item {
+		text-align: center;
+	
+		&-img {
+			border-radius: 100%;
+			margin: 0 auto;
+		}
+
+		&-title {
+			padding: 60px 0;
+		}
+
+		// &-content {
+		// 	display: none;
+		// }
+	}
 }	
+// .block {
+// 	display: block;
+// }
