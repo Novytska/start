@@ -1,6 +1,4 @@
-.features-container {
-	padding: 80px 20px;
-}
+
 .feature-section {
 	min-height: 430px;
 	padding: 30px;
@@ -11,31 +9,40 @@
 	}
 
 	&__text {
-	display: block;
-	font-size: 18px;
-	color: $main-text-color;
-	line-height: 22px;
-	padding-bottom: 40px;
-}
+		display: block;
+		font-size: 18px;
+		color: $text-color;
+		line-height: 22px;
+		padding-bottom: 40px;
 
-&__title {
-	padding: 45px 0;
-}
+		@include breakpoints(sm) {
+    		font-size: 16px;
+			line-height: 20px;
+    	}
+	}
+
+	&__title {
+		padding: 45px 0;
+	}
 }
 .iphone-features {
-	padding: 100px 0;
 
 	&__btn {
 		padding-top: 40px;
 		display: inline-block;
 	}
 }
+
 .features-content {
 	max-height: 500px;
 	height: 100%;
 	display: flex;
 	max-width: 470px;
 	flex-direction: column;
+
+	@include breakpoints(sm) {
+    	margin: 0 auto;
+    }
 
 	&__title {
 		max-width: 265px;
@@ -58,50 +65,65 @@
 	&__img {
     	position: absolute;
 	    top: 0;
-	    right: 0;
 	    bottom: 0;
 	    left: 0;
 	    width: 100%;
 	    height: 100%;
 	    background-repeat: no-repeat;
     	background-size: contain;
+
+    	@include breakpoints(sm) {
+    		opacity: 0.5;
+    	}
 	}
 }
 
 .map-wrapper {
-	margin: 160px 0;
 	min-height: 490px;
+	margin-bottom: 60px;
 	height: 100%;
 	position: relative;
 
 	&__img {
     	position: absolute;
 	    top: 0;
-	    right: 0;
+	    right: -400px;
 	    bottom: 0;
-	    left: 0;
 	    width: 100%;
 	    height: 100%;
 	    background-repeat: no-repeat;
     	background-size: contain;
     	background-position: right;
-    	margin-left: 100px;
+
+    	@include breakpoints(sm) {
+    		opacity: 0.5;
+    		right: 0;
+    	}
 	}
 }
 .iphone-section {
 
+	@include breakpoints(sm) {
+		text-align: center;    	
+	}
+
 	&__btn {
-		background-color: $bth-head;
+		background-color: $btn-head;
 		max-width: 200px;
 		width: 100%;
 		margin-right: 20px;
 		max-height: 40px;
 		height: 100%;
+
+		@include breakpoints(sm) {
+			margin-right: 0;
+			margin-bottom: 30px;   	
+		}
 	}
 
 	&__btn-learn {
 		max-width: 140px;
-		border: 1px solid $main-text-color;
+		border: 1px solid $text-color;
 		max-height: 40px;
 		height: 100%;
 		width: 100%;	
@@ -116,7 +138,7 @@
 			font-size: 14px;
 			font-family: 'fontello';
 			color: $btn-white;
-			margin-left: 30px;
+			margin-left: 20px;
 		}
 	}
 
@@ -147,7 +169,6 @@
 }
 
 .screen-container {
-	padding: 110px 0;
 	text-align: center;
 
 	&__title {
@@ -159,9 +180,13 @@
 			position: absolute;
 			width: 50px;
 			height: 2px;
-			background-color: $bth-head;
+			background-color: $btn-head;
 			bottom: 0;
 			left: 48%;
+
+			@include breakpoints(sm) {
+				left: 40%;  	
+			}
 		}
 	}
 
@@ -172,16 +197,38 @@
 }
 
 .screen-section {
+	@include fcc;
+
 	width: 100%;
-	display: flex;
 	flex-direction: row;
 	flex-wrap: no-wrap;
 	overflow: visible;
-	position: relative;	
+	min-height: 850px;	
+	height: 100%;
+}
+
+.screen-item {
+	width: 100%;
+	min-width: 360px;
+
+
+	&:first-child {
+		margin-left: -245px;	
+	}
+
+
+	&:last-child {
+		margin-right: -245px;
+	}
+
+	&__iphone {
+		min-width: 420px; 
+	}
 }
 
 
 .order-container {
+	padding: 0 20px 60px;
 	text-align: center;
 
 	&__form {
@@ -213,17 +260,26 @@
 			background-color: $btn-green;
 			transition: all 0.3s ease;
 
+			@include breakpoints(sm) {
+				max-width: 120px;  	
+			}
+
 			&:hover {
-      			 opacity: 80%;
+      			opacity: 80%;
     		}
 
 			&:after {
 				position: absolute;
 				content: '\e801';
-				font-size: 14px;
+				font-size: 12px;
 				font-family: 'fontello';
 				color: $btn-white;
-				margin: 4px 0 4px 15px;
+				right: 0;
+    			margin-right: 15px;
+
+    			@include breakpoints(sm) {
+					margin-right: 5px; 	
+				}
 			}
 		}
 
@@ -239,18 +295,15 @@
 		text-transform: uppercase;
 		font-size: 12px;
 		color: $text-color; 
-		
-		&:last-child{
-			padding-bottom: 45px
-		}
+		margin-bottom: 40px;
 	}
 
 	&__title {
-		padding-bottom: 55px;
+		margin-bottom: 55px;
 	}
 
 	&__apple {
-		padding: 65px 0;
+		margin: 60px 0;
 
 		&-title {
 			display: block;
@@ -275,12 +328,12 @@
 			}
 
 			&:before {
-			@include before-apple;
+				@include before-apple;
 
-			position: absolute;
-			top: 20px;
-			left: 25px;
-			font-size: 23px;
+				position: absolute;
+				top: 20px;
+				left: 25px;
+				font-size: 26px;
 			}
 		}
 
@@ -300,7 +353,10 @@
 
 .customers-slider {
 	@include fcc;
-	max-width: 1110px;
+
+	margin: 0 auto;
+	max-width: 850px;
+	width: 100%;
 
 	&__item {
 		text-align: center;
@@ -308,17 +364,335 @@
 		&-img {
 			border-radius: 100%;
 			margin: 0 auto;
+			opacity: 0.5;
+			max-width: 105px;
+			width: 100%;
 		}
 
 		&-title {
 			padding: 60px 0;
 		}
 
-		// &-content {
-		// 	display: none;
-		// }
+		&-rating {
+			@include fcc;
+
+			flex-direction: row;
+			margin: 0 auto;
+			padding: 35px;
+			max-width: 120px;
+		}
+	}
+
+	&__content {
+		display: none;
+	}
+}
+
+.slick-current	{
+
+	.customers-slider {
+		
+		&__item {
+
+			&-img {
+				opacity: 1;
+				max-width: 140px;
+				width: 100%;
+			}
+		}	
+
+		&__content {
+			display: block;
+		}
+	}
+}
+
+.prev, .next {
+  	width: 50px; 
+  	height: 50px;
+	transition: all 0.4s ease;
+	position: relative;
+	background-color: transparent;
+	box-shadow: none;
+  	border: none;
+  	cursor: pointer;
+
+  	@include breakpoints(sm) {
+  		display: none;
+  	}
+
+  	&:focus {outline:none;}
+
+	&:before {
+	  	font-family: 'fontello';
+	  	font-size: 32px;
+	  	color: $text-color;
+	  	position: absolute;
+	  	width: 50px;
+	  	height: 50px;
+	  	top: 0;
+	  	right: 0;
+	}
+}
+
+.prev {
+	left: 0;
+	top: 75px;
+
+	&:before {
+		content: '\e80b';
 	}
 }	
-// .block {
-// 	display: block;
-// }
+
+.next {
+	left: 90%;
+	top: 75px;
+
+	&:before {
+		content: '\e80a';
+	}
+}
+
+
+.star-ratting {
+	display: inline-block;
+	position: relative;
+	margin: 20px 0;
+	color: #f2bc3b;
+	flex: 0 0 35%;
+	margin-right: 5px;
+	width: 20px;
+	height: 25px;
+	
+	&:before {
+		position: absolute;
+		content: '\e804';
+		font-size: 22px;
+		font-family: 'fontello';
+		left: 0;
+	}
+}
+
+.star-ratting__emty {
+	color: #8c8f94;
+}
+
+
+.plan-container {
+
+	&-wrapp {
+		background-color: #f4f4f5;
+	}
+}
+
+.plan-content {
+
+	&__title {
+		width: 380px;
+		padding-bottom: 55px;
+	}
+
+	&__subtitle {
+		display: block;
+		padding: 20px 0;
+	}
+
+	&__text {
+		display: block;
+		padding: 45px 0;
+	}
+
+	&__contacts {
+		
+		&-text {
+			font-size: 14px;
+			color: $text-color;
+			line-height: 18px;
+		}
+	}
+}
+
+.plan-toogles {
+	@include fcsa;
+
+	max-width: 260px;
+	width: 100%;
+	flex-direction: row;
+	border-radius: 30px;
+	border: 1px solid $text-color;
+	position: relative;
+	margin-bottom: 30px;
+	cursor: pointer;
+
+	&__container {
+		font-size: 16px;
+		color: $text-color;
+		padding: 15px 0;
+		position: relative;
+		z-index: 2;
+		transition: all .7s ease-in-out;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 40px;
+		border-radius: 30px;
+		background-color: $btn-white;
+		left: 0;
+		top: 0;
+		margin: 3px;
+		transition: all .7s ease-in-out;
+	}
+}
+
+.active-toggles {
+	color: $black-color;
+
+
+	&:before {
+		left: 47%;
+	}
+}
+
+.plan-section {
+	margin: 80px 0;
+	max-width: 330px;
+	max-height: 530px;
+	width: 100%;
+	height: 100%;
+	padding: 50px 0;
+	background-color: $plan-color;
+	position: relative;
+	transition: all .7s ease-in-out;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-items: center;
+
+	@include breakpoints(sm) {
+		height: 400px;
+	}
+
+	&__price {
+		padding: 5px 15px;
+		border-radius: 30px;
+		border: 1px solid $text-color;
+		max-width: 60px;
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $black-color;
+
+		@include breakpoints(sm) {
+			max-width: 50px;
+			padding: 5px;
+		}
+	}
+
+	&__title {
+		padding-bottom: 25px;
+	}
+
+	&__text {
+		display: block;
+		padding: 55px 0;
+		max-width: 175px;
+		margin: 0 auto;
+		text-align: center;
+
+		@include breakpoints(sm) {
+			padding: 25px 10px;
+		}
+	}
+	
+	&__list {
+		@include breakpoints(sm) {
+			text-align: center;		
+		}
+	}
+
+	&__element {
+		font-size: 16px;
+		color: $black-color;
+		padding-bottom: 30px;
+
+		@include breakpoints(sm) {
+			padding-bottom: 20px
+		}
+
+		&-text {
+			position: relative;
+			font-size: 16px;
+			color: $black-color;
+
+			@include breakpoints(sm) {
+				font-size: 14px;
+			}
+
+			&:before {
+				content: '\e805';
+				position: absolute;
+				color: $btn-green;
+				font-family: 'fontello';
+				left: -20px;
+
+				@include breakpoints(sm) {
+					left: -15px;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		border-radius: 30px;
+		border: 1px solid $btn-head;
+		max-height: 40px;
+
+		&-text {
+			padding: 10px 50px;
+			display: inline-block;
+			color: $btn-head;
+			font-size: 16px;
+
+			@include breakpoints(sm) {
+				padding: 10px;	
+				font-size: 14px;		
+			}
+		}
+	}
+}
+
+.active-section {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	background-color: $btn-white;
+	transform: scale(1.1);
+	z-index: 10;
+
+	.plan-section__btn {
+		background-color: $btn-head;
+
+		&-text {
+			color: $btn-white;
+		}	
+	}
+}
+
+.news-container {
+	padding: 85px 20px;
+
+
+	&__form {
+		max-width: 570px;
+	}
+
+	&__text {
+		font-size: 14px;
+		color: $text-color;
+		display: inline-block;
+		padding: 30px 0;
+	}
+}
+
+

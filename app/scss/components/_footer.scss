@@ -1,0 +1,114 @@
+
+.footer-social {
+
+	&__content {
+		margin: 35px 0;
+	}
+
+	&__apple {
+		margin-bottom: 40px;
+
+		&-btn {
+			background-color: $black-color;
+			border-radius: 10px;
+			position: relative;
+			flex-direction: column;
+			padding: 5px 0 5px 15px;
+			max-width: 150px;
+			width: 100%;
+			text-align: right;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+
+			&:before {
+				@include before-apple;
+
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				font-size: 27px;
+			}
+		}
+
+		&-text {
+			font-size: 10px;
+			color: $btn-white;	
+		}
+
+		&-subtext {
+			font-size: 20px;
+			color: $btn-white;
+		}
+	}	
+
+}
+.navigation-social {	
+	&__footer {
+
+		&-link {
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: $black-color;
+			}
+		}
+	}	
+}	
+
+.footer-content {
+
+	@include breakpoints(xs) {
+		margin-top: 30px;
+	}
+
+	&__header {
+		padding-bottom: 10px;
+
+		@include breakpoints(xs) {
+			border-bottom: 1px solid $text-color;
+			position: relative;
+			cursor: pointer;
+
+			&:after {
+				content: '\e807';
+				position: absolute;
+				font-family: 'fontello';
+				right: 5px;
+			}
+		}
+	}	
+
+	&__list {
+
+		@include breakpoints(xs) {
+			display: none;
+		}
+	}
+
+	&__element {
+		margin-bottom: 20px;
+
+		@include breakpoints(xs) {
+			margin: 10px 0;
+		}
+	}
+
+	&__link {
+		font-size: 16px;
+		color: $text-color;
+		line-height: 20px;
+		transition: all 0.3s ease;
+		
+		&:hover {
+			color: $black-color;
+		}
+	}
+}
+.active-footer {
+	&:after {
+		transform: rotate(180deg);
+	}
+}		

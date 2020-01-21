@@ -1,15 +1,17 @@
 
 $(document).ready(function(){
 
-	//Slider
-
-$('.customers-slider-wrapper').slick({
+$('.customers-slider').slick({
   centerMode: true,
-  centerPadding: '60px',
+  infinite: true,
+  centerPadding: '20px',
   slidesToShow: 3,
-  speed:1500,
-  index: 2,
+  speed: 500,
+  variableWidth: false,
   arrows: true,
+  prevArrow: $('.prev'),
+  nextArrow: $('.next'),
+
 
   responsive: [
     {
@@ -22,7 +24,7 @@ $('.customers-slider-wrapper').slick({
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 540,
       settings: {
         arrows: false,
         centerMode: true,
@@ -32,17 +34,7 @@ $('.customers-slider-wrapper').slick({
     }
   ]
 });
-
- $('.customers-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1
-    });
         
-  // $('.customers-slider__item').addClass('slick-active');
-  //   $('.customers-slider__item-content').addClass('block');
 
 
 // Navigation
@@ -57,6 +49,25 @@ $('.customers-slider-wrapper').slick({
     $('body').removeClass('overflow-hidden');
   })
 
+ //Toggle
+
+  $('.plan-toogles__container').on('click', function() {
+    $('.plan-toogles__container').removeClass('active-toggles');
+    $('.plan-toogles').toggleClass('active-toggles');
+    $(this).addClass('active-toggles');
+    var currentIndex = $(this).attr('data-index');
+    $('.plan-section').removeClass('active-section');
+    $('#'+currentIndex).addClass('active-section');
+  })
+
+  //Footer-accordion
+    
+  $('.footer-content__header').on('click', function() {
+    $(this).toggleClass('active-footer');
+// открываем или скрываем блок под заголовком, по которому кликнули
+    $(this).next().slideToggle();
+    })
+  
 });
 
 

@@ -3,6 +3,10 @@
 	background-position: center;
 	max-height: 920px;
 	overflow: hidden;
+
+	@include breakpoints(sm) {
+		max-height: 720px;
+	}
 }
 
 .header-menu {
@@ -16,10 +20,10 @@
 	&:hover {
 		.header-btn {
 			&__icon {
-				background-color: $bth-head;
+				background-color: $btn-head;
 
 				&:before, &:after {
-					background-color: $bth-head;
+					background-color: $btn-head;
 				}
 			}
 		}
@@ -60,6 +64,8 @@
 	display: block;
 	position: fixed;
 	height: 100%;
+	width: 100%;
+	max-width: 250px;
 	background-color: $nav-color;
 	transform: translateX(-100%);
 	left: 0;
@@ -67,6 +73,13 @@
 	z-index: 1;
 	padding: 40px;
 	transition: all 0.7s cubic-bezier(0.545, 0, 0.05, 1);
+
+	@include breakpoints(sm) {
+		max-width: 100%;
+		width: 100%;
+		background-color: rgba(38,39,45,.9);
+		text-align: center;
+	}
 
 	&.active {
 		transform: translateX(0);
@@ -78,14 +91,22 @@
 		font-size: 16px;
 		transition: all 0.3s ease;
 
+		@include breakpoints(sm) {
+			font-size: 20px; 
+		}
+
 		&:hover {
-			color: $bth-head;
+			color: $btn-head;
 		}
 	}
 
 	&__element {
 		display: block;
 		margin: 10px 0; 
+
+		@include breakpoints(sm) {
+			margin: 20px 0; 
+		}
 
 		&:last-child {
 			margin-bottom: 30px;
@@ -99,7 +120,9 @@
 	&__close {
 		position: absolute;
 		top: 20px;
-		right: 35px;	
+		right: 35px;
+		width: 20px;
+		height: 20px;	
 
 		&:before, &:after {
 			content: '';
@@ -107,6 +130,8 @@
 		    height: 2px;
 		    background: $btn-white;
 		    position: absolute;
+		    top: 50%;
+		    left: 0;
 		}
 
 		&:before {
@@ -117,16 +142,15 @@
 		}
 	}
 }
+
 .navigation-social {
-	padding-top: 50px;
+
+	&__link {
+		color: $social-color;
+	}
 
 	&__icon {
-		color: $social-color;
-		transition: all 0.3s ease; 
-
-		&:hover {
-			color: $btn-white;
-		}
+		font-size: 20px;
 	}
 
 	.facebook {
@@ -194,19 +218,42 @@
 	&__element {
 		display: inline-block;
 		padding: 0 5px;
+
+		&:first-child {
+			padding: 0 5px 0 0;
+		}
 	}
+}
+
+.navigation-social{
+
+	&__header {
+		padding-top: 50px;
+
+		&-link {
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: $btn-white;
+			}
+		}
+	}	
 }
 
 
 .header-categoties {
 	display: inline-flex;
+
+	@include breakpoints(md) {
+		display: none;
+	}
 }
 
 .header-list {
 
 	&:first-child {
-			padding: 10px 0;
-		}
+		padding: 10px 0;
+	}
 
 	&__element {
 		display: inline-block;
@@ -228,10 +275,14 @@
 .header-subcategoties {
 	display: inline-flex;
 
+	@include breakpoints(md) {
+		display: none;
+	}
+
 	&__btn {
 		min-width: 130px;
 		border-radius: 30px;
-		background-color: $bth-head;
+		background-color: $btn-head;
 		margin-left: 10px;
 		position: relative;
 
@@ -252,10 +303,10 @@
 	padding-top: 120px;
 	max-width: 770px;
 	margin: 0 auto;
+	text-align: center;
 
 	&__text {
-		display: block;
-		text-align: center;
+		display: block;	
 		padding: 50px 0;
 	}
 
@@ -264,11 +315,11 @@
 		height: 50px;
 		border-radius: 30px;
 		font-size: 16px;
-		border: 1px solid $main-text-color;
+		border: 1px solid $text-color;
 		font-weight: normal;
 		position: relative;
 
-			&:before {
+		&:before {
 			content: '\e802';
 			font-size: 16px;
 			font-family: 'fontello';
