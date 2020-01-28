@@ -86,13 +86,13 @@
     @media only screen and (max-width: 540px) { @content; }
   }
   @else if $media == sm {
-    @media only screen and (max-width: 768px) { @content; }
+    @media only screen and (max-width: 767px) { @content; }
   }
   @else if $media == md {
     @media only screen and (max-width: 991px) { @content; }
   }
 
   @else if $media == lg {
-    @media only screen and (max-width: 1199px) { @content; }
+    @media only screen and (max-width: 1399px) { @content; }
   }
 }

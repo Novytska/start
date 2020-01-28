@@ -11,8 +11,6 @@ $('.customers-slider').slick({
   arrows: true,
   prevArrow: $('.prev'),
   nextArrow: $('.next'),
-
-
   responsive: [
     {
       breakpoint: 768,
